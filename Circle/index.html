@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip Path With Animation</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.582);
+        gap: 20px;
+
+    }
+
+    #circle {
+        height: 250px;
+        width: 250px;
+        background-color: rgb(214, 211, 34);
+        border-radius: 50%;
+        clip-path: inset(0 0 50% 0);
+        transition: clip-path 1s ease;
+    }
+
+    #circle.bottom {
+
+        clip-path: inset(50% 0 0 0);
+
+    }
+
+    button {
+        background-color: #00bfff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    button:active {
+        background-color: #009acd;
+        /* cor mais escura enquanto pressionado */
+    }
+
+    button.pressed {
+        background-color: green;
+    }
+</style>
+
+<body>
+
+    <div id="circle" class="circle"></div>
+    <button onclick="clipInset()" id="botao">
+        <p>clip-path inset</p>
+    </button>
+
+
+
+    <script>
+
+        function clipInset() {
+            let circulo = document.getElementById('circle')
+            circulo.classList.toggle('bottom')
+        }
+
+    </script>
+</body>
+
+</html>

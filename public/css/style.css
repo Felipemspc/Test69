@@ -27,6 +27,7 @@ body{
 }
 .circle{
     position: absolute;
+    
     height: 350px;
     width: 350px;
     border-radius: 100%;
