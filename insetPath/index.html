@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inset path</title>
+</head>
+
+<body>
+
+
+    <div id="circle"></div>
+    <button id="botao" onclick="toggleCut()">
+        <p id="theme">Night Time</p>
+    </button>
+
+
+
+
+
+    <script>
+
+        function toggleCut() {
+            const botao = document.getElementById('circle')
+            const tema = document.getElementById('theme')
+
+            botao.classList.toggle('half')
+            tema.innerText = tema.innerText === 'Night Time' ? 'Day Time' : 'Night Time'
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
